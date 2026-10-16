@@ -1,0 +1,30 @@
+[
+  {
+    "id": "environmental-health-food-standards",
+    "name": "Environmental Health Food Standards",
+    "status": "In progress",
+    "summary": "AppSheet case management and inspection workflows.",
+    "example": true
+  },
+  {
+    "id": "asb-enforcement",
+    "name": "ASB Enforcement",
+    "status": "In review",
+    "summary": "New submission and case management process.",
+    "example": true
+  },
+  {
+    "id": "rse-flying-bedstead",
+    "name": "RSE Flying Bedstead",
+    "status": "In progress",
+    "summary": "Core template and reference libraries.",
+    "example": true
+  },
+  {
+    "id": "public-health-contracts",
+    "name": "Public Health Contracts",
+    "status": "Completed",
+    "summary": "Contract monitoring and KPI tracking.",
+    "example": true
+  }
+]

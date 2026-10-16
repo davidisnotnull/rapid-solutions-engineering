@@ -1,0 +1,29 @@
+---
+import HackneyLogo from "./HackneyLogo.astro";
+import { councilHomeHref, footerLinks } from "../data/navigation";
+---
+
+<footer class="lbh-footer">
+  <div class="lbh-container">
+    <div class="lbh-footer__inner">
+      <a class="lbh-footer__logo-link" href={councilHomeHref}>
+        <HackneyLogo class="lbh-footer__logo" />
+        <span class="govuk-visually-hidden">Hackney</span>
+      </a>
+      <ul class="lbh-footer__links">
+        {footerLinks.map((link) => (
+          <li>
+            {link.href ? (
+              <a class="lbh-link" href={link.href}>
+                {link.label}
+              </a>
+            ) : (
+              <span>{link.label}</span>
+            )}
+          </li>
+        ))}
+      </ul>
+      <p class="lbh-footer__tagline">A fairer Hackney</p>
+    </div>
+  </div>
+</footer>

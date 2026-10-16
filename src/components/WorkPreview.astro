@@ -1,0 +1,31 @@
+---
+import { home, loadExampleWork, statusTagClass } from "../data/home";
+
+const work = loadExampleWork();
+---
+
+<section class="rse-work" aria-labelledby="current-work-heading">
+  <div class="lbh-container">
+    <div class="rse-work__header">
+      <h2 id="current-work-heading">{home.workHeading}</h2>
+      <a class="lbh-link" href={home.workAll.href}>
+        {home.workAll.label}
+      </a>
+    </div>
+    <ul class="rse-work__grid">
+      {work.map((item) => (
+        <li class="rse-work-card">
+          <p>
+            <span class={statusTagClass[item.status]}>{item.status}</span>
+          </p>
+          <h3>{item.name}</h3>
+          <p>{item.summary}</p>
+          <a class="lbh-link" href={home.viewProject.href}>
+            {home.viewProject.label}
+            <span aria-hidden="true"> →</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

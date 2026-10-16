@@ -1,0 +1,38 @@
+---
+import BenefitPanel from "../components/BenefitPanel.astro";
+import ExampleDataNotice from "../components/ExampleDataNotice.astro";
+import WorkPreview from "../components/WorkPreview.astro";
+import { home } from "../data/home";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Home">
+  <div class="lbh-container rse-hero">
+    <div>
+      <p class="rse-eyebrow">{home.eyebrow}</p>
+      <h1>{home.title}</h1>
+      <p>{home.summary}</p>
+      <div class="rse-hero__actions">
+        <a
+          class="govuk-button lbh-button"
+          href={home.primaryCta.href}
+          role="button"
+          draggable="false"
+          data-module="govuk-button"
+        >
+          {home.primaryCta.label}
+          <span aria-hidden="true"> →</span>
+        </a>
+        <a
+          class="govuk-button lbh-button lbh-button--secondary"
+          href={home.secondaryCta.href}
+        >
+          {home.secondaryCta.label}
+        </a>
+      </div>
+    </div>
+    <BenefitPanel />
+  </div>
+  <ExampleDataNotice />
+  <WorkPreview />
+</BaseLayout>

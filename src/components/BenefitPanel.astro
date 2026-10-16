@@ -1,0 +1,56 @@
+---
+import { home } from "../data/home";
+
+const icons = ["effort", "smarter", "collaborate", "impact"] as const;
+---
+
+<ul class="rse-benefit-panel">
+  {home.benefits.map((benefit, index) => (
+    <li class="rse-benefit">
+      <svg class="rse-benefit__icon" viewBox="0 0 32 32" aria-hidden="true">
+        <circle
+          cx="16"
+          cy="16"
+          r="15"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+        />
+        {icons[index] === "effort" && (
+          <path
+            d="M9 20.5h14M11 17.5h10M13 14.5h6"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          />
+        )}
+        {icons[index] === "smarter" && (
+          <path
+            d="M11 18c0-3 2-5 5-5s5 2 5 5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          />
+        )}
+        {icons[index] === "collaborate" && (
+          <path
+            d="M11 20v-2a3 3 0 0 1 6 0M16 18a3 3 0 0 1 6 0v2"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          />
+        )}
+        {icons[index] === "impact" && (
+          <path
+            d="M16 9v8M12 13l4 4 4-4"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          />
+        )}
+      </svg>
+      <p class="rse-benefit__title">{benefit.title}</p>
+      <p class="rse-benefit__text">{benefit.text}</p>
+    </li>
+  ))}
+</ul>

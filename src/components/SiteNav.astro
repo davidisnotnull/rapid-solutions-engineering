@@ -1,0 +1,24 @@
+---
+import { isCurrentPath, navItems } from "../data/navigation";
+
+const pathname = Astro.url.pathname;
+---
+
+<nav class="rse-service-nav" aria-label="Service">
+  <div class="lbh-container">
+    <ul class="rse-service-nav__list">
+      {navItems.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            aria-current={
+              isCurrentPath(pathname, item.href) ? "page" : undefined
+            }
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>

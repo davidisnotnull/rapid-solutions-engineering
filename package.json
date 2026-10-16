@@ -1,0 +1,41 @@
+{
+  "name": "rapid-solutions-engineering",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Static Rapid Solutions Engineering portal. Hosting and authentication are not decided.",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "copy-assets": "node scripts/copy-lbh-assets.mjs",
+    "dev": "npm run copy-assets && ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "npm run copy-assets && ASTRO_TELEMETRY_DISABLED=1 astro build && node scripts/scan-built.mjs",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
+    "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
+    "lint": "eslint . && prettier --check .",
+    "format": "prettier --write .",
+    "test": "node --test tests/portal.test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidisnotnull/rapid-solutions-engineering.git"
+  },
+  "dependencies": {
+    "astro": "^7.4.0",
+    "lbh-frontend": "^4.1.1",
+    "sass": "^1.105.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.12.3",
+    "eslint": "^10.12.0",
+    "eslint-plugin-astro": "^3.2.1",
+    "globals": "^17.13.0",
+    "prettier": "^3.9.10",
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.71.2"
+  }
+}

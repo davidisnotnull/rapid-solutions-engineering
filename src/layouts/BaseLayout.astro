@@ -1,0 +1,37 @@
+---
+import "../styles/global.scss";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+const documentTitle =
+  title === "Home"
+    ? "Rapid Solutions Engineering"
+    : `${title} – Rapid Solutions Engineering`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{documentTitle}</title>
+  </head>
+  <body>
+    <a class="govuk-skip-link" href="#main-content">
+      Skip to main content
+    </a>
+    <SiteHeader />
+    <main id="main-content">
+      <slot />
+    </main>
+    <SiteFooter />
+    <script>
+      import "../scripts/lbh.ts";
+    </script>
+  </body>
+</html>
